@@ -1,0 +1,74 @@
+.header{
+    position: sticky;
+    top:0;
+    z-index: 100;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background: black;
+    
+    color: white;
+
+    &__logo{
+        font-size: 30px;
+    }
+
+    &__list{
+        display: flex;
+
+
+        list-style: none;
+        font-size: 12px;
+
+        &__li{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            margin: 0 5px ;
+
+            &::after{
+                content: '';
+                height: 2px;
+                background: orange;
+
+                transform: scaleX(0);
+                transform-origin: 0;
+                transition: all 0.3s ease-in-out;
+            }
+            &:hover{
+                &::after{
+                transform: scaleX(1)
+                };
+            }
+            &:hover &__list{
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            &__list{
+                position: absolute;
+                top: 100%;
+                left: 0;
+
+                list-style: none;
+                padding: 10px;
+                background: white;
+                color: black;
+
+                display: flex;
+                flex-direction: column;
+                width: 200%;
+
+                transform: translateY(5em);
+                opacity: 0;
+                transition: all 0.3s ease-in-out;
+            }
+            &__list li{
+                margin: 5px 0;
+            }
+        }
+    }
+}
