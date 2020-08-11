@@ -6,7 +6,7 @@ function Header() {
             <div className="header__logo">
                 THE COFFEE HOUSE
             </div>
-            <div className="header__list">
+            <div className="header__list__group">
                 <ul className="header__list">
                     <li className="header__list__li">CÂU CHUYỆN THƯƠNG HIỆU
                     <ul className="header__list__li__list">
@@ -21,7 +21,7 @@ function Header() {
                     <li className="header__list__li">TIN TỨC</li>
                     <li className="header__list__li">TUYỂN DỤNG</li>
                     <li className="header__list__li">CỬA HÀNG</li>
-                    <li><i className="fas fa-search"></i></li>
+                    <li className="header__list__li"><i className="fas fa-search"></i></li>
                 </ul>
             </div>
         </div>

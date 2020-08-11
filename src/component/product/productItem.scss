@@ -4,7 +4,7 @@
     margin: 1em 0;
 
 
- &__image{
+&__image{
     width: 100%;
     img{
          width: 100%;
@@ -13,13 +13,15 @@
      }
  }
 
- &__name{
+&__name{
     font-size: 20px;
-    margin: 0 0 1em 0;
+    margin: 0 0 0.5em 0;
+    text-transform: uppercase;
+    height: 50px;
  }
 
 &__price{
-    font-size: 35px;
+    font-size: 30px;
     color: #ea8025;
 }
 
@@ -42,13 +44,31 @@
     background: #ea8025;
     color: white;
     border: #ea8025 solid 2px;
+    z-index: 0;
 
-    transition: all 0.3s ease-in-out ;
+    position: relative;
+    transition: all 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+   &::before{
+        content: '';
+        position:absolute;
+        width: 0%;
+        height: 100%;
+        top:0;
+        right: 0;
+
+        z-index: -1;
+        background: white;
+
+        transition: all 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+   }
 
     &:hover{
-        background: white;
+        &::before{
+            width: 100%;
+            left:0;
+        }
         color: #ea8025;
-        border: #ea8025 solid 2px;
     }
     
 }
@@ -57,7 +77,7 @@
     color: #ea8025;
     border: #ea8025 solid 2px;
 
-    transition: all 0.3s ease-in-out ;
+    transition: all 0.45s ease-in-out ;
 
     &:hover{
         background: #ea8025;

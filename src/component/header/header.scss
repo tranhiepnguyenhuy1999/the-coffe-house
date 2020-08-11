@@ -5,7 +5,7 @@
 
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     
     background: black;
     
@@ -15,31 +15,43 @@
         font-size: 30px;
     }
 
+    &__list__group{
+        height: 100%;
+    }
+
     &__list{
         display: flex;
-
+        height: 100%;
 
         list-style: none;
-        font-size: 12px;
+        font-size: 13px;
 
         &__li{
             position: relative;
+
             display: flex;
             flex-direction: column;
             cursor: pointer;
-            margin: 0 5px ;
 
-            &::after{
+            padding: 1em 1em;
+
+            &::before{
                 content: '';
-                height: 2px;
+                position:absolute;
+                bottom: 0;
+                left: 0;
+                
+                height: 5px;
+                width: 100%;
+
                 background: orange;
 
                 transform: scaleX(0);
                 transform-origin: 0;
-                transition: all 0.3s ease-in-out;
+                transition: all 0.45s ease-in-out;
             }
             &:hover{
-                &::after{
+                &::before{
                 transform: scaleX(1)
                 };
             }
@@ -54,21 +66,27 @@
                 left: 0;
 
                 list-style: none;
-                padding: 10px;
                 background: white;
                 color: black;
-
+                padding: 0;
+                
                 display: flex;
                 flex-direction: column;
                 width: 200%;
 
-                transform: translateY(5em);
+                transform: translateY(4em);
                 opacity: 0;
-                transition: all 0.3s ease-in-out;
+                transition: all 0.45s ease-in-out;
             }
             &__list li{
-                margin: 5px 0;
+                box-sizing: border-box;
+                padding: 10px 10px;
+
+                &:hover{
+                    background: #d4d3d3;
+                }
             }
+
         }
     }
 }
